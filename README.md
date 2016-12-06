@@ -11,7 +11,7 @@ The project is broken up in to 3 distinct stages:
 ## Data Collection
 In training mode in the simulator, data is collected by recording images through three forward facing cameras cameras mounted on the vehicle; one in the center, one on the left side and one on the right side. For each set of 3 images which is recorded, the simulator also outputs an associated steering angle which is used as a label for the images. 
 
-| Right        | Center         | Left  |
+| Left          | Center        | Right  |
 | ------------- |:-------------:| ------|
 |![Left] (https://github.com/JustinHeaton/Behavioral-Cloning/blob/master/Images/Left.jpg) | ![Center] (https://github.com/JustinHeaton/Behavioral-Cloning/blob/master/Images/Center.jpg) | ![Right] (https://github.com/JustinHeaton/Behavioral-Cloning/blob/master/Images/Right.jpg)
 
