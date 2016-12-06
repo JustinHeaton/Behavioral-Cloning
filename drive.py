@@ -3,7 +3,7 @@ import base64
 import json
 
 import numpy as np
-from skimage.exposure import equalize_hist, adjust_gamma
+from skimage.exposure import adjust_gamma
 from scipy.misc import imresize
 import socketio
 import eventlet
@@ -36,10 +36,7 @@ def telemetry(sid, data):
     image = Image.open(BytesIO(base64.b64decode(imgString)))
     image_array = np.asarray(image)
     image_array = imresize(image_array, (32,64,3)).astype(np.float32)
-    #image_array = equalize_hist(image_array)
     image_array = adjust_gamma(image_array)
-    #image_array -= np.mean(image_array)
-    #image_array /= np.std(image_array)
     transformed_image_array = image_array[None, 12:, :, :].astype(np.float32)
     # This model currently assumes that the features of the model are just the images. Feel free to change this.
     steering_angle = float(model.predict(transformed_image_array, batch_size=1))
