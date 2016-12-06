@@ -11,6 +11,10 @@ The project is broken up in to 3 distinct stages:
 ## Data Collection
 In training mode in the simulator, data is collected by recording images through three forward facing cameras cameras mounted on the vehicle; one in the center, one on the left side and one on the right side. For each set of 3 images which is recorded, the simulator also outputs an associated steering angle which is used as a label for the images. 
 
+| Right        | Center         | Left  |
+| ------------- |:-------------:| ------|
+|![Left] (https://github.com/JustinHeaton/Behavioral-Cloning/blob/master/Images/Left.jpg) | ![Center] (https://github.com/JustinHeaton/Behavioral-Cloning/blob/master/Images/Center.jpg) | ![Right] (https://github.com/JustinHeaton/Behavioral-Cloning/blob/master/Images/Right.jpg)
+
 For training the model I recorded images for two different types of driving, **Controlled Driving** and **Recovery Driving**. 
 
 In **controlled driving** I tried to maintain the vehicle close to the center of the driving lane as it travelled through the simulator course. For the **controlled driving** part of the dataset I used all three images (center, right, left) and I manufactured appropriate labels for the side camera images by adding a small amount of right turn to the left image labels and a small amount of left turn to the right image labels. The result of this is that when the car begins to drift from the center of the lane and finds itself in the approximate spot where the side camera had recorded the image, it will automatically know to steer itself back towards the center. 
