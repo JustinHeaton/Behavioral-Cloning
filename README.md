@@ -17,11 +17,11 @@ In training mode in the simulator, data is collected by recording images through
 
 For training the model I recorded images for two different types of driving, **Controlled Driving** and **Recovery Driving**. 
 
+In **controlled driving** I tried to maintain the vehicle close to the center of the driving lane as it travelled through the simulator course. For the **controlled driving** part of the dataset I used all three images (center, right, left) and I manufactured appropriate labels for the side camera images by adding a small amount of right turn to the left image labels and a small amount of left turn to the right image labels. The result of this is that when the car begins to drift from the center of the lane and finds itself in the approximate spot where the side camera had recorded the image, it will automatically know to steer itself back towards the center. 
+
 | Controlled  Driving  | 
 | -------------------- | 
 |![Controlled] (https://github.com/JustinHeaton/Behavioral-Cloning/blob/master/Images/Controlled.gif) | 
-
-In **controlled driving** I tried to maintain the vehicle close to the center of the driving lane as it travelled through the simulator course. For the **controlled driving** part of the dataset I used all three images (center, right, left) and I manufactured appropriate labels for the side camera images by adding a small amount of right turn to the left image labels and a small amount of left turn to the right image labels. The result of this is that when the car begins to drift from the center of the lane and finds itself in the approximate spot where the side camera had recorded the image, it will automatically know to steer itself back towards the center. 
 
 Next there is **recovery driving**. In this image set I recorded driving segments which started from the outside of the lane (on either side) and recorded the vehicle driving back towards the center of the lane. Inevitably there will be times when the car drifts beyond the images recorded from the side cameras in **controlled driving** and it must make a larger steering  correction back towards center. The recovery images trained the car to make this correction when it finds itself drifting towards the curb/lane lines on either side of the road. Only the center camera images were used to train for recovery. 
 
@@ -61,5 +61,9 @@ The model was compiled with an adam optimizer (learning rate = .0001), Mean Squa
 
 ## Testing model in the sumulator
 The script drive.py takes in a constant stream of images, resizes and crops them to the input shape for the model, and passes the transformed image array to the model which predicts an appropriate steering angle based on the image. The steering angle is then passed to the car as a control and the car steers itself accordingly. The autonomous vehicle travels like this through the course, constantly putting out images and receiving steering angles and hopefully the model has been trained well enough that the steering angles it receives keep the vehicle driving safely in the middle of the lane and not drifting off the road or doing anything else which would be considered dangerous. 
+
+| Autonomous  Driving  | 
+| -------------------- | 
+|![Controlled] (https://github.com/JustinHeaton/Behavioral-Cloning/blob/master/Images/Autonomous.gif) | 
 
 The data collection and preprocessing techniques and model architecture outlined above were sufficient to build a model which drives safely around the course for multiple laps without hitting the curbs or drifting off of the road.
