@@ -17,9 +17,17 @@ In training mode in the simulator, data is collected by recording images through
 
 For training the model I recorded images for two different types of driving, **Controlled Driving** and **Recovery Driving**. 
 
+| Controlled  Driving  | 
+| -------------------- | 
+|![Controlled] (https://github.com/JustinHeaton/Behavioral-Cloning/blob/master/Images/Controlled.gif) | 
+
 In **controlled driving** I tried to maintain the vehicle close to the center of the driving lane as it travelled through the simulator course. For the **controlled driving** part of the dataset I used all three images (center, right, left) and I manufactured appropriate labels for the side camera images by adding a small amount of right turn to the left image labels and a small amount of left turn to the right image labels. The result of this is that when the car begins to drift from the center of the lane and finds itself in the approximate spot where the side camera had recorded the image, it will automatically know to steer itself back towards the center. 
 
 Next there is **recovery driving**. In this image set I recorded driving segments which started from the outside of the lane (on either side) and recorded the vehicle driving back towards the center of the lane. Inevitably there will be times when the car drifts beyond the images recorded from the side cameras in **controlled driving** and it must make a larger steering  correction back towards center. The recovery images trained the car to make this correction when it finds itself drifting towards the curb/lane lines on either side of the road. Only the center camera images were used to train for recovery. 
+
+| Recovery  Driving  | 
+|:------------------:| 
+|![Recovery] (https://github.com/JustinHeaton/Behavioral-Cloning/blob/master/Images/Recovery.gif) |
 
 ## Image Preprocessing and Augmentation
 The images outputted by the simulator are 160 by 320 pixels with 3 color channels (RGB). The first step I took in preprocessing the images was to reduce the size so that I would be able to hold more images in memory at one time, and to speed up the training which would be extremely slow on full sized images. I chose to resize the images to 32 by 64 and to crop off 12 pixels from the top of each image because the top ~40% contains only blue sky and background objects which are not useful in training driving behavior. The final size of each image, and the input shape for my neural network, is 20 by 64 with 3 color channels.
