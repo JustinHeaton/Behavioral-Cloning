@@ -2,7 +2,7 @@
 ## Udacity Self Driving Car Engineer Nanodegree - Project 3
 The goal of this project is to train a vehicle to drive autonomously in a simulator by taking camera images as inputs to a deep neural network and outputting a predicted steering angle based on the image. 
 
-The project is broken up in to 3 distinct stages:
+The project is broken up in to 4 distinct stages:
 - Stage 1: Data Collection
 - Stage 2: Image Preprocessing and Augmentation
 - Stage 3: Building and Training a Neural Network
