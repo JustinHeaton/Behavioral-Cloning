@@ -1,6 +1,6 @@
 # Behavioral-Cloning
 ## Udacity Self Driving Car Engineer Nanodegree - Project 3
-The goal of this project is to train a vehicle to drive autonomously in a simulator by taking camera images as inputs to a deep neural network and outputting a predicted steering angle based on the image. 
+The goal of this project is to train a vehicle to drive autonomously in a simulator by taking camera images as inputs to a Convolutional neural network and outputting a predicted steering angle based on the image. 
 
 The project is broken up in to 4 distinct stages:
 - Stage 1: Data Collection
